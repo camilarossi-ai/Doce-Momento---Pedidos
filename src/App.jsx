@@ -32,6 +32,7 @@ export default function App() {
   const [orderType, setOrderType] = useState("retirada");
   const [regionId, setRegionId] = useState("");
   const [date, setDate] = useState("");
+  const [time, setTime] = useState("");
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
@@ -91,7 +92,9 @@ export default function App() {
       lines.push(`Região: ${region?.name || "-"}`);
       lines.push(`Endereço: ${address}`);
     }
-    lines.push(`Data desejada: ${new Date(date + "T00:00:00").toLocaleDateString("pt-BR")}`);
+    lines.push(
+      `Data desejada: ${new Date(date + "T00:00:00").toLocaleDateString("pt-BR")}${time ? ` às ${time}` : ""}`
+    );
     lines.push("");
     lines.push(`Nome: ${name}`);
     lines.push(`Telefone: ${phone}`);
@@ -145,8 +148,8 @@ export default function App() {
             linear-gradient(225deg, #FFFDFB 25%, transparent 25%) -7px 0/14px 14px repeat-x;
           height: 10px;
         }
-        .stamp-btn { transform: rotate(-1.5deg); transition: transform .15s ease; }
-        .stamp-btn:hover:not(:disabled) { transform: rotate(0deg) scale(1.02); }
+        .stamp-btn { transition: transform .15s ease; }
+        .stamp-btn:hover:not(:disabled) { transform: scale(1.02); }
       `}</style>
 
       {/* Hero */}
@@ -329,16 +332,28 @@ export default function App() {
               Seus dados
             </h2>
             <div className="space-y-3">
-              <div>
-                <label className="text-sm font-medium block mb-1">Data desejada</label>
-                <input
-                  type="date"
-                  value={date}
-                  min={new Date().toISOString().split("T")[0]}
-                  onChange={(e) => setDate(e.target.value)}
-                  style={{ background: "#FFFDFB", borderColor: "#F0C9CD" }}
-                  className="w-full rounded-xl border p-3 text-sm"
-                />
+              <div className="grid grid-cols-2 gap-3">
+                <div>
+                  <label className="text-sm font-medium block mb-1">Data desejada</label>
+                  <input
+                    type="date"
+                    value={date}
+                    min={new Date().toISOString().split("T")[0]}
+                    onChange={(e) => setDate(e.target.value)}
+                    style={{ background: "#FFFDFB", borderColor: "#F0C9CD" }}
+                    className="w-full rounded-xl border p-3 text-sm"
+                  />
+                </div>
+                <div>
+                  <label className="text-sm font-medium block mb-1">Horário (opcional)</label>
+                  <input
+                    type="time"
+                    value={time}
+                    onChange={(e) => setTime(e.target.value)}
+                    style={{ background: "#FFFDFB", borderColor: "#F0C9CD" }}
+                    className="w-full rounded-xl border p-3 text-sm"
+                  />
+                </div>
               </div>
               <div>
                 <label className="text-sm font-medium block mb-1">Nome</label>
