@@ -7,7 +7,7 @@ export const CONFIG = {
   city: "Paiçandu, PR",
   whatsappNumber: "5544999887582", // troque pelo número real (DDI+DDD+número, só dígitos)
   pickupAddress: "Endereço para retirada — Paiçandu, PR", // troque pelo endereço real
-  sheetWebhookUrl: "", // cole aqui a URL do Apps Script (veja SETUP.md) — usada pra registrar E pra ler os pedidos
+  sheetWebhookUrl: "https://script.google.com/macros/s/AKfycby4fmynVIm6Vrmilb4KaE_ymUM6DhSfYZaoJlqaQtarx8XUYOOEj3gijwnp88tnyZG-/exec", // cole aqui a URL do Apps Script (veja SETUP.md) — usada pra registrar E pra ler os pedidos
   painelSenha: "docemomento123", // troque por uma senha só dela — protege o /painel
   menu: [
     { id: "individual", name: "Pudim individual", size: "120 ml", price: 10 },
