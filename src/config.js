@@ -5,7 +5,7 @@ export const CONFIG = {
   brandName: "Doce Momento",
   tagline: "Feito com amor para adoçar seus momentos",
   city: "Paiçandu, PR",
-  whatsappNumber: "5544997030915", // troque pelo número real (DDI+DDD+número, só dígitos)
+  whatsappNumber: "5544999887582", // troque pelo número real (DDI+DDD+número, só dígitos)
   pickupAddress: "Endereço para retirada — Paiçandu, PR", // troque pelo endereço real
   sheetWebhookUrl: "", // cole aqui a URL do Apps Script (veja SETUP.md) — usada pra registrar E pra ler os pedidos
   painelSenha: "docemomento123", // troque por uma senha só dela — protege o /painel
